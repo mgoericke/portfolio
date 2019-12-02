@@ -39,6 +39,7 @@ def lambda_handler(event, context):
                     'ContentType': str(mimetypes.guess_type(nm)[0]),
                     'ACL': 'public-read'
                 })
+                print "Uploaded " + nm
 
         topic.publish(Subject="Portfolio Deployment", Message="Portfolio successfully deployed")
         if job:
