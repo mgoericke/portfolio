@@ -19,11 +19,8 @@ def lambda_handler(event, context):
         if job:
             for artifact in job["data"]["inputArtifacts"]:
                 print "artifact name " + str(artifact["name"])
-                print "artifact location " + str(artifact["location"])
-                print "artifact s3Location " + str(artifact["location"]["s3Location"])
                 if artifact["name"] == "MyAppBuild":
                     location = artifact["location"]["s3Location"]
-                    print "artifact location (*) " + str(aartifact["location"]["s3Location"])
 
         print "Building portfolio from " + str(location)
         s3 = boto3.resource("s3")
@@ -42,7 +39,6 @@ def lambda_handler(event, context):
                     'ContentType': str(mimetypes.guess_type(nm)[0]),
                     'ACL': 'public-read'
                 })
-                print "Uploaded " + nm
 
         topic.publish(Subject="Portfolio Deployment", Message="Portfolio successfully deployed")
         if job:
