@@ -6,8 +6,6 @@ phases:
         nodejs: 10
   build:
     commands:
-      - echo nothing to do yet
-      - node --version
       - npm install
       - npm run webpack
 artifacts:
