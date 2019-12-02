@@ -8,9 +8,12 @@ phases:
     commands:
       - echo nothing to do yet
       - node --version
+      - npm install
+      - npm run webpack
 artifacts:
   files:
     - index.html
     - favicon.ico
     - styles/*
     - images/*
+    - dist/bundle.js
