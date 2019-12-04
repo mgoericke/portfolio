@@ -31,4 +31,4 @@ const myWork = [
   }
 ];
 
-ReactDOM.render(<ExampleWork work={myWork}/>, document.getElementById('example-work'))
+ReactDOM.render(<ExampleWork work={myWork} />, document.getElementById('example-work'))
