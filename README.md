@@ -11,3 +11,10 @@ This is my professional serverless portfolio. It uses AWS and ReactJS.
 * GitHub
 * Atom
 * me :)
+
+
+# Deploy upload Lambda
+
+```bash
+$ serverless deploy
+```

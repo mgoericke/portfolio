@@ -1,0 +1,16 @@
+service: portfolio
+custom:
+  accountId: "#{AWS::AccountId}"
+
+provider:
+  name: aws
+  runtime: python2.7
+  region: eu-central-1
+  role: "arn:aws:iam::${self:custom.accountId}:role/service-role/deployPortfolioRole"
+  stage: "dev"
+functions:
+  upload:
+    handler: upload_portfolio.lambda_handler
+
+plugins:
+  - serverless-pseudo-parameters
