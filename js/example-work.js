@@ -35,4 +35,8 @@ const ExampleImage = (props) => {
   )
 }
 
+// default
 export default ExampleWork;
+
+// can be imported to if requested ... import {xxx} from XXX
+export {ExampleWorkBubble, ExampleImage};
